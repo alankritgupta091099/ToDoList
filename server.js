@@ -10,6 +10,8 @@ const add=require('./add');
 const list=require('./list');
 const completed=require('./completed');
 const deleteAll=require('./delete');
+const login=require('./login');
+const register=require('./register');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -27,3 +29,5 @@ app.use('/add',add);
 app.use('/list',list);
 app.use('/completed',completed);
 app.use('/delete',deleteAll);
+app.use('/login',login);
+app.use('/register',register);
