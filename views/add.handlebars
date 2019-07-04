@@ -1,0 +1,14 @@
+<div class="conrtainer">
+    <div class="jumbotron">
+        <form action="/add" method="POST" autocomplete="off">
+        <input type="hidden" name="_id" value="{{Task._id}}">
+        <center><h1>TO DO</h1></center>
+         <div class="form-group">
+            <label><h2>AddTask</h2></label>
+            <input type="text" name="task" placeholder="Enter Task" class="form-control " value="{{Task.task}}"></input>
+        </div>
+       <button type ="submit" class="btn btn-info" >ADD</button>
+       <a href="/list" class="btn btn-secondary">Show All</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<h3> All Tasks<a href="/add" class="btn btn-secondary">Add task</a></h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tasks To Do</th>
+        </tr>    
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td><a href="/completed/{{this._id}}"><i class="fa fa-check" aria-hidden="true"></i></a></td>
+            <td>{{this.task}}</td>
+            <td>
+                <a href="/add/{{this._id}}"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+            </td>
+            <td>
+                <a href="/list/{{this._id}}" ><i class="fa fa-trash" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<a href="/completed" class="btn btn-secondary">Completed Tasks</a>

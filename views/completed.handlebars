@@ -1,0 +1,17 @@
+<h3>Completed Tasks<a href="/add" class="btn btn-secondary">Add task</a></h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Completed</th>
+        </tr>    
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr style="text-decoration: underline">
+            <td>{{this.task}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<a href="/list" class="btn btn-secondary">Pending Tasks</a>
+<a href="/delete" class="btn btn-secondary">Delete All</a>
