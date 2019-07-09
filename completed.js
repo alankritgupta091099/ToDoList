@@ -2,9 +2,10 @@ const express=require('express');
 const router=express.Router();
 const  mongoose=require('mongoose');
 const Task=mongoose.model('Task');
+const{ensureAuthenticated}=require('./auth');
 
-router.get('/',(req,res)=>{
-    Task.find({completed:true},(err,doc)=>{
+router.get('/',ensureAuthenticated,(req,res)=>{
+    Task.find({completed:true,user:req.user.email},(err,doc)=>{
         if(!err){
             res.render("completed",{
                 title:'Completed Tasks',
@@ -16,7 +17,7 @@ router.get('/',(req,res)=>{
         }
     });
 });
-router.get('/:id',(req,res)=>{
+router.get('/:id',ensureAuthenticated,(req,res)=>{
     //req.body.completed=true;
     //console.log(req.params.id)
     Task.findOneAndUpdate({_id:req.params.id},{completed:true},{new:true},(err,doc)=>{

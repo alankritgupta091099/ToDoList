@@ -2,9 +2,9 @@ const express=require('express');
 const router=express.Router();
 const  mongoose=require('mongoose');
 const Task=mongoose.model('Task');
+const{ensureAuthenticated}=require('./auth');
 
-
-router.get('/',(req,res)=>{
+router.get('/',ensureAuthenticated,(req,res)=>{
     //res.json({message:"completed"});
     //console.log('Delete all initiated');
     Task.deleteMany({completed:true},{new:true},(err,doc)=>{

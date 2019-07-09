@@ -8,3 +8,4 @@ mongoose.connect('mongodb://localhost:27017/ToDo',{useNewUrlParser:true},(err)=>
 });
 
 require('./tasks');
+require('./users');
